@@ -1,24 +1,19 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
-import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-icono-contador',
-  standalone: true,
-  imports: [MatIconModule, MatBadgeModule, MatButtonModule],
-  template: `  
-    <button  mat-icon-button  [matBadge]="cantidad"  matBadgeColor="accent"  [matBadgeHidden]="cantidad === 0"  (click)="navegar()">  
-      <mat-icon>{{ icono }}</mat-icon>   
-    </button>  `,
+  imports: [MatIconModule, MatBadgeModule, MatButtonModule, RouterLink],
+  templateUrl: './icono-contador.html',
+  styleUrl: './icono-contador.css'
 })
-export class IconoContadorComponent {
-  @Input() icono!: string;
-  @Input() ruta!: string[];
-  @Input() cantidad: number = 0;
+export class IconoContador {
 
-  private readonly router = inject(Router);
-
-  navegar(): void {   this.router.navigate(this.ruta);  }
+  icono = input.required<string>(); // Usa el icono adecuado
+  ruta = input.required<string[]>(); // Coloca la ruta a donde dirigirá
+  cantidad = input<number>(0); // Inicia siempore en 0 pero se actualiza según el componente padre.
+  
 }
