@@ -1,0 +1,7 @@
+:host {    display: inline-block;  }
+
+/*
+  La propiedad display: inline-block; hace que tu componente se comporte como un bloque que se puede colocar en la misma línea que otros elementos. 
+  Esto es esencial para el layout, ya que te permite controlar su espaciado y tamaño como si fuera una caja independiente, en lugar de ocupar toda la línea (que es el comportamiento de un bloque por defecto).
+  En resumen, :host { display: inline-block; } garantiza que tu componente <app-icono-contador> se pueda posicionar de forma flexible junto a otros elementos en el encabezado de tu aplicación.
+*/
