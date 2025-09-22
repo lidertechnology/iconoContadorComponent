@@ -1,0 +1,5 @@
+<a [routerLink]="ruta()" aria-label="Navegar a la página">
+    <button mat-icon-button [matBadge]="cantidad()" matBadgeColor="accent" [matBadgeHidden]="cantidad() === 0">
+      <mat-icon role="img" aria-label="{{ icono() }}">{{ icono() }}</mat-icon>
+    </button>
+</a>
